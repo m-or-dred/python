@@ -1,0 +1,13 @@
+import secrets
+
+char = [chr(x) for x in range(33, 127)]
+
+senha = []
+
+for x in range(16):
+    key = secrets.choice(char)
+    senha.append(key)
+
+senha = ''.join(senha)    
+
+print(senha)
