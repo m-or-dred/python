@@ -1,5 +1,3 @@
 def crs(s):
-    if s != []:
-        return crs([x for x in s if x < s[0]]) + [x for x in s if x == s[0]] + crs([x for x in s if x > s[0]])
-    else:
-        return []
+    if s != []:  return crs([x for x in s if x < s[0]]) + [x for x in s if x == s[0]] + crs([x for x in s if x > s[0]])
+    else:  return []
