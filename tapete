@@ -1,0 +1,23 @@
+# tapete
+
+NM = input().split()
+
+if len(NM) == 2:
+
+	N, M = int(NM[0]), int(NM[1])
+
+if N in range(7, 100, 2) and M == 3 * N:
+
+	for i in range(N):
+
+		if i < N//2:
+			
+			print(('.|.' * (2 * i + 1)).center(M, '-'))
+
+		elif i > N//2:
+			
+			print(('.|.' * (2 * (N-i) - 1)).center(M , '-'))
+
+		else:  
+			
+			print(('WELCOME').center(M, '-'))
