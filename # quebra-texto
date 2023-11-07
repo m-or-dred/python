@@ -1,0 +1,18 @@
+s = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'; w = 4
+# s, w = input(), int(input())
+
+if len(s) % w:
+	
+	saida = [''] * (len(s)//w+1)
+
+else:
+	
+	saida = [''] * (len(s)//w)
+
+for i in range(len(saida)):
+
+	saida[i] = s[w*i:w*(i+1)]
+
+for i in saida:
+
+	print(''.join(i))
