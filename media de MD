@@ -1,0 +1,18 @@
+# ap = sum([float(input('ap ')) for _ in range(5)])/5 * 0.7
+# tp = sum([float(input('tp ')) for _ in range(3)])/3 * 0.2
+# qz = sum([float(input('qz ')) for _ in range(4)])/4 * 0.1
+
+ap = sum([9.5, 7, 6, 9, 6])/5 * 0.7
+tp = sum([8.4, 8.5, 10])/3 * 0.2
+qz = sum([8, 5, 10, 9.2])/4 * 0.1
+
+mp = ap + tp + qz
+
+# if mp >= 7.5: pf = mp
+# else: pf = 15 - 2 * mp
+if mp < 7.5:
+	pf = 15 - 2 * mp
+# mf = (2 * mp + pf) / 3
+
+	print('mp:', mp, '\npf:', pf)#, '\nmf:', mf, '\n')
+else: print('mf:', mp)
