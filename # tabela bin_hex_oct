@@ -1,0 +1,11 @@
+n = 63
+
+if n in range(1, 100):
+	
+	tabela = [[i+1, oct(i+1)[2:], hex(i+1)[2:].upper(), bin(i+1)[2:]] for i in range(n)]
+
+	for linha in tabela:
+
+		for elem in linha: print(f'{elem}'.rjust(len(str(tabela[len(tabela)-1][3]))), end = ' ') #* len(str(tabela[len(tabela)-1][3])))
+
+		print()
