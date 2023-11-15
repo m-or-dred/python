@@ -1,18 +1,9 @@
-s = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'; w = 4
-# s, w = input(), int(input())
+string, width = input(), int(input())
 
-if len(s) % w:
-	
-	saida = [''] * (len(s)//w+1)
+if len(string) % width:  output = [''] * (len(string) // width + 1)
 
-else:
-	
-	saida = [''] * (len(s)//w)
+else:  output = [''] * (len(string) // width)
 
-for i in range(len(saida)):
+for i in range(len(output)):  output[i] = string[width * i : width * (i + 1)]
 
-	saida[i] = s[w*i:w*(i+1)]
-
-for i in saida:
-
-	print(''.join(i))
+for line in output:  print(''.join(line))
