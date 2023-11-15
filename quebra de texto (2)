@@ -1,0 +1,20 @@
+import textwrap
+
+def wrap(string, max_width):
+
+	part = textwrap.wrap(string, max_width)
+
+	saida = ''
+
+	for x in part:
+
+		saida += x
+
+		saida += '\n'
+
+	return saida
+
+if __name__ == '__main__':
+	string, max_width = input(), int(input())
+	result = wrap(string, max_width)
+	print(result)
