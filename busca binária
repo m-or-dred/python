@@ -1,13 +1,16 @@
-def busca(x, s):
-    
-    if s == []:  return False
+def busca(elem, lista):
 
-    s.sort()
+    if lista == []:  return 'O elemento não está na lista.'
 
-    m = s[len(s)//2]
-    
-    if x == m:  return True; print('está na posição', s.index(m))
-    
-    elif x < m:  return busca(x, [_ for _ in s if _ < m])
-    
-    else:  return busca(x, [_ for _ in s if _ > m])
+    lista.sort()
+
+    meio = lista[len(lista)//2]
+
+    if elem == meio:  return f'Está na posição {lista.index(meio)+1}'
+
+    elif elem < meio:  return busca(elem, [x for x in lista if x < meio])
+
+    else:  return busca(elem, [x for x in lista if x > meio])
+
+x, lst = int(input()), eval(input())
+print(busca(x,lst))
