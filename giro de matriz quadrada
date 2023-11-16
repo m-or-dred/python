@@ -1,0 +1,35 @@
+def rot(matriz, ang):
+
+	m, n = len(matriz), len(matriz[0])
+
+	if m == n and ang % 90 == 0:
+
+		if ang % 360 == 0:  return matriz
+
+		while ang < 0:  ang += 360
+
+		while ang > 360:  ang += -360
+
+		for q in range(ang//90):
+
+			if q % 2:  matriz = [[R[i][j] for i in range(len(R)-1, -1, -1)] for j in range(len(R))]
+
+			else:  R = [[matriz[i][j] for i in range(m-1, -1, -1)] for j in range(m)]
+
+		if ang//90 % 2:  return R
+
+		else:  return matriz
+
+from random import randint as _
+
+n = _(1,5)
+
+matriz = [[_(1,9) for j in range(n)] for i in range(n)]
+
+A = rot(matriz, 180)
+
+for row in matriz:  print(row)
+
+print()
+
+for row in A:  print(row)
