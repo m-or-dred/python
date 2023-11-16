@@ -1,0 +1,35 @@
+import random as _;  n = _.randint(2,5);  print(n);  print()#;  w = {False: 0, True: 1};  Id = [[w[i==j] for j in range(n)] for i in range(n)]
+# for row in Id:  print(row)
+# print()
+p = []
+# p = list(range(n))
+# while p == list(range(n)):
+for j in range(n):
+	num = _.randint(0,n-1)
+	while num in p:  num = _.randint(0,n-1)
+	p += [num]
+
+print(p);  print()
+
+# P = []
+# for i in range(n):  P += [Id[p[i]]]
+# for row in P:  print(row)
+# print()
+
+M = [[_.randint(1,9) for j in range(n)] for i in range(n)];  T = [[M[i][j] for i in range(n)] for j in range(n)]
+for row in M:  print(row)
+print()
+
+W = _.choice([M, T])
+
+# S = []
+S = [W[p[i]] for i in range(n)]
+# for i in range(n):  S += [W[p[i]]]
+
+if W == M:
+	print('permuta de linhas\n')
+	for row in S:  print(row)
+else:
+	print('permuta de colunas\n')
+	G = [[S[i][j] for i in range(n)] for j in range(n)]
+	for row in G:  print(row)
