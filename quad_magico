@@ -1,0 +1,25 @@
+def quad_magic(Q):
+	
+	m, n = len(Q), len(Q[0])
+	
+	if m == n:
+	
+		num_magico = sum(Q[0])
+	
+		T = [[Q[i][j] for i in range(n)] for j in range(n)]
+	
+		lst = [sum(rows) for rows in Q]
+	
+		lst += [sum(cols) for cols in T]
+	
+		lst += [sum([Q[i][i] for i in range(n)])]
+	
+		lst += [sum([Q[i][n-1-i] for i in range(n)])]
+	
+		s = {False: f'NAO\n{lst}', True: f'SIM\n{lst}'}
+	
+		return s[all(_sum == num_magico for _sum in lst)]
+	
+	else:  return 'NAO'
+
+Q = eval(input());  print(Q);  print();  print(quad_magic(Q))
