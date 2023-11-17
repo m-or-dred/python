@@ -1,0 +1,15 @@
+lst = eval(input());  print(lst);  num = int(input());  print(num)
+
+while num:
+
+	if lst == []:  lst += [num];  num = int(input());  print(num)
+
+	if num <= lst[-1]:  lst += [num]
+
+	for i in range(len(lst)):
+
+		if num > lst[i]:  lst.insert(i, num);  break
+
+	num = int(input());  print(num)
+
+print();  print(lst)
