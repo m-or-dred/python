@@ -1,0 +1,10 @@
+def naoPrimos(lst):
+	c = 0
+	for num in lst:
+		if num == 1 or any(num % x == 0 for x in range(2, round(num**0.5) + 1)):
+			c += 1
+	return c
+
+lst = eval(input());  print(lst);  print()
+
+print(naoPrimos(lst))
