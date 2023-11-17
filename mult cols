@@ -1,0 +1,6 @@
+M = eval(input());  print(M);  T = [[M[i][j] for i in range(len(M))] for j in range(len(M[0]))];  p = []
+for row in T:
+	m = 1
+	for elem in row:  m *= elem
+	p += [m]
+print(p)
