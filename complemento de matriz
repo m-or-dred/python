@@ -1,0 +1,55 @@
+def det(M):
+
+	if len(M) == len(M[0]):
+
+		if len(M) > 1:
+
+			d = 0
+
+			for k in range(len(M)):
+
+				R = [[M[i][j] for j in range(len(M)) if j != k] for i in range(1, len(M))]
+
+				d += (-1) ** k * M[0][k] * det(R)
+
+			return d
+
+		else:  return M[0][0]
+
+def sub(M, a, b):  return [[M[i][j] for j in range(len(M[0])) if j != b] for i in range(len(M)) if i != a]
+
+def cof(M):
+	
+	C = [[] for i in range(len(M))]
+
+	for i in range(len(M)):
+
+		for j in range(len(M)):
+
+			S = sub(M, i, j)
+
+			C[i].append((-1)**(i+j) * det(S))
+
+	return C
+	
+def com(M):
+
+	C = cof(M)
+
+	for i in range(len(C)):
+
+		for j in range(len(C[0])):
+
+			if C[i][j] == 1:  C[i][j] = 0
+
+			elif C[i][j] == 0:  C[i][j] = 1
+
+	return C
+
+M = [
+	[1,1,1],
+	[1,1,1],
+	[1,1,1]
+]
+
+print(com(M))
