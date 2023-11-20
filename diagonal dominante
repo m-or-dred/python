@@ -1,0 +1,27 @@
+def d_d(M):
+
+	m, n, diagl, comp = len(M), len(M[0]), [], []
+
+	for i in range(m):
+		for j in range(n):
+			if i == j:
+				diagl.append(M[i][j])
+				M[i][j] = 0
+
+	T = [[M[i][j] for i in range(m)] for j in range(n)]
+
+	for i in range(m):
+		x = sum([abs(q) for q in M[i]])
+		y = sum([abs(w) for w in T[i]])
+		z = diagl[i]
+		comp.append(z > x and z > y)
+
+	print(all(x==True for x in comp))
+
+M = [
+	[15,2,5],
+	[3,54,9],
+	[-10,4,15]
+]
+
+d_d(M)
