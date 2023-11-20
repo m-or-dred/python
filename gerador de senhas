@@ -1,1 +1,1 @@
-from random import choices;  print(''.join(choices([chr(x) for x in range(33, 127)], k=16)))
+from random import choices;  ''.join(choices([chr(x) for x in range(33, 127)], k=16))
