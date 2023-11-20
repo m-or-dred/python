@@ -1,0 +1,27 @@
+def _135(matrix):
+
+	m, n = len(matrix), len(matrix[0])
+	
+	diagonals = []
+
+	for a in range(m-1,0,-1):
+
+		subr = [[matrix[i][j] for j in range(n)] for i in range(a,m)]
+
+		diagonals += [[subr[i][j] for j in range(n) for i in range(len(subr)) if i == j]]
+
+	for b in range(n):
+
+		subc = [[matrix[i][j] for j in range(b,n)] for i in range(m)]
+
+		diagonals += [[subc[i][j] for j in range(len(subc[0])) for i in range(m) if i == j]]
+
+	return diagonals
+
+from random import randint as a;  m, n = a(1,5), a(1,5);  matrix = [[a(10,99) for j in range(m)] for i in range(m)]
+
+for row in matrix:  print(row)
+
+A = _135(matrix);  print()
+
+for row in A:  print(str(row[::-1]).center(20, ' '))
