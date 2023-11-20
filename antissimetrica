@@ -1,0 +1,19 @@
+def ant(M):  
+	def trp(M):  return [[M[i][j] for i in range(len(M))] for j in range(len(M[0]))]
+	def neg(M):  return [[-M[i][j] for j in range(len(M[0]))] for i in range(len(M))]
+	return trp(M) == neg(M)
+
+# from random import randint as r;  M = [[r(0,9) for j in range(3)] for i in range(3)];  T = trp(M);  N = neg(M)
+
+# for row in M:  print(row)
+# print()
+# for row in T:  print(row)
+# print()
+# for row in N:  print(row)
+# print()
+# print(T == N)
+M = [
+	[0,-1],
+	[1,0]
+]
+print(ant(M))
