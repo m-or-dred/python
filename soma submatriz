@@ -1,0 +1,22 @@
+def exclude_row(matrix, row):
+	return [[matrix[i][j] for j in range(len(matrix[0]))] for i in range(len(matrix)) if i != row]
+
+def exclude_column(matrix, column):  return [[matrix[i][j] for j in range(len(matrix[0])) if j != column] for i in range(len(matrix))]
+
+def _sum(matrix):  return sum([matrix[i][j] for j in range(len(matrix[0])) for i in range(len(matrix))])
+
+from random import randint as r;  m, n, = r(1,5), r(1,5);  print('rows:', m, '| columns:', n);  matrix = [[r(10,99) for j in range(n)] for i in range(m)]
+
+for row in matrix:  print(row)
+
+from random import choice as c;  choice = c(['row', 'column']);  print()
+
+row, column = r(0,m-1), r(0,n-1)
+
+randint = {'row': row, 'column': column};  y = randint[choice];  print(choice, y, 'excluded')
+
+exclude = {'row': exclude_row(matrix, row), 'column': exclude_column(matrix, column)};  x = exclude[choice]
+
+for row in x:  print(row)
+
+print();  print(_sum(x))
