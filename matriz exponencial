@@ -1,0 +1,69 @@
+def divide(M, n):
+
+	return [[M[i][j] / n for j in range(len(M))] for i in range(len(M))]
+
+def product(A, B):
+
+	C = []
+
+	for i in range(len(A)):
+
+		C.append([])
+
+		for j in range(len(B[0])):
+
+			C[i].append(0)
+
+			for k in range(len(B)):
+
+				C[i][j] += A[i][k] * B[k][j]
+
+	return C
+
+def exponentiation(M, k):
+
+	if k > 1:
+
+		E = product(M, M)
+
+		for _ in range(k-2):
+			
+			E = product(E, M)
+
+		return E
+
+	else:
+
+		return M
+
+def factorial(n):
+
+	f = 1
+
+	for _ in range(1, n + 1):
+		
+		f *= _
+
+	return f
+
+def _sum(A, B):
+	
+	return [[A[i][j] + B[i][j] for j in range(len(A))] for i in range(len(A))]
+
+def exponential_matrix(M, k):
+
+	I = [[1 if i == j else 0 for j in range(len(M))] for i in range(len(M))]
+
+	e = _sum(I, M)
+
+	for a in range(2, k+1):
+
+		e = _sum(e, divide(exponentiation(M, a), factorial(a)))
+
+	return e
+
+M = [
+	[2,1],
+	[1,1]
+]
+exponential_matrix(M,2)
