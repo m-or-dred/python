@@ -1,0 +1,9 @@
+def fib(n):
+
+	curr, succ = 0, 1
+
+	for _ in range(n):
+
+		curr, succ = succ, succ + curr
+
+	return curr
