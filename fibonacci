@@ -1,7 +1,5 @@
 def fib(n):
-
 	curr, succ = 0, 1
-
-	for _ in range(n):  curr, succ = succ, curr + succ
-
+	for _ in range(n):
+		curr, succ = succ, curr + succ
 	return curr
