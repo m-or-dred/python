@@ -4,6 +4,6 @@ def fib(n):
 
 	for _ in range(n):
 
-		curr, succ = succ, succ + curr
+		curr, succ = succ, curr + succ
 
 	return curr
