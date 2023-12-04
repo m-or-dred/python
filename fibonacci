@@ -1,5 +1,14 @@
 def fib(n):
-	curr, succ = 0, 1
-	for _ in range(n):
-		curr, succ = succ, curr + succ
-	return curr
+ if n > 0:
+  atual, proximo = 1, 1
+  for i in range(n-2):  atual, proximo = proximo, proximo + atual
+  return proximo
+
+def fib_2(n):
+#  if n == 1:  return [1]
+ if n > 0:
+  lista = [1,1]
+  for i in range(n-2):  lista.append(lista[-2] + lista[-1])
+  return lista[-1]
+#   return lista
+print(fib(15))
