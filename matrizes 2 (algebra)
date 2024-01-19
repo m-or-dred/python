@@ -1,47 +1,25 @@
 def det(matriz):
+ if len(matriz) == len(matriz[0]):
+  if len(matriz) > 1:
+   d = 0
+   for k in range(len(matriz)):
+    R = [[matriz[i][j] for j in range(len(matriz)) if j != k] for i in range(1, len(matriz))]
+    d += (-1) ** k * matriz[0][k] * det(R)
+   return d
 
-	if len(matriz) == len(matriz[0]):
-
-		if len(matriz) > 1:
-
-			d = 0
-
-			for k in range(len(matriz)):
-
-				R = [[matriz[i][j] for j in range(len(matriz)) if j != k] for i in range(1, len(matriz))]
-
-				d += (-1) ** k * matriz[0][k] * det(R)
-
-			return d
-
-		else:  return matriz[0][0]
-
-# from random import randint as _
-from math import cos
-from math import sin
-# M = [[_(1,9) for j in range(len(M))] for i in range(len(M))]
-M = [[cos(90), -sin(90)],[sin(90),cos(90)]]
-# print('matriz:')
-# for row in M:  print(row)
-# print('determinante:', det(M))
-# print()
+  else:
+   return matriz[0][0]
 
 T = [[M[i][j] for i in range(len(M))] for j in range(len(M))]
 
-if det(M) != 0:
-
-	C = [[] for i in range(len(M))]
-
-	for i in range(len(M)):
-
-		for j in range(len(M)):
-
-			R = [[M[m][n] for n in range(len(M)) if n != j] for m in range(len(M)) if m != i]
-
-			C[i].append((-1)**(i+j) * det(R))
+if det(M):
+ C = [[] for i in range(len(M))]
+ for i in range(len(M)):
+  for j in range(len(M)):
+   R = [[M[m][n] for n in range(len(M)) if n != j] for m in range(len(M)) if m != i]
+   C[i].append((-1) ** (i+j) * det(R))
 
 	A = [[C[i][j] for i in range(len(M))] for j in range(len(M))]
-
 	I = [[A[i][j]/det(M) for j in range(len(M))] for i in range(len(M))]
 
 	# S = [[M[i][j]*I[i][j] for j in range(len(M))] for i in range(len(M))]
