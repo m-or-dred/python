@@ -1,3 +1,4 @@
 def crs(s):
-    if s != []:  return crs([x for x in s if x < s[0]]) + [x for x in s if x == s[0]] + crs([x for x in s if x > s[0]])
+    mid = s[len(s)/2]
+    if s:  return crs([x for x in s if x <= s[mid]]) + [s[mid]] + crs([x for x in s if x > s[mid]])
     else:  return []
