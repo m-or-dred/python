@@ -1,5 +1,4 @@
-char = '!"#$%&\'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_`abcdefghijklmnopqrstuvwxyz{|}~'
 
-from random import choices as c
+from random import choices
 
-print(''.join(c(char, k=16)))
+print(''.join(map(chr, choices(list(range(33,127)), key=16))))
