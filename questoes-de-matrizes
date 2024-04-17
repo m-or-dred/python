@@ -1,0 +1,96 @@
+# 1 - diagonal principal da matriz
+# o, mtx = int(input()), []
+# for x in range(o):  mtx.append([])
+# for i in range(o):
+#     for j in range(o):  n = int(input());  mtx[i].append(n)
+# for i in range(o):  print(mtx[i][i], end = ' ')
+
+
+# 2 - diagonal secundária  da matriz
+# o, mtx = int(input()), []
+# for x in range(o):  mtx.append([])
+# for x in range(o):
+#     for y in range(o):  n = int(input());  mtx[x].append(n)
+# for x in range(o):  print(mtx[x][o - x - 1], end = ' ')
+
+
+# 3 - SOMA DE MATRIZES
+# A, B, mtx = eval(input()), eval(input()), []
+# for x in range(len(A)):  mtx.append([])
+# for i in range(len(A)):
+# 	for j in range(len(A[i])):  mtx[i].append(A[i][j] + B[i][j])
+# print(mtx)
+
+
+# 4 - multiplicação estrutural
+# A, B, mtx = eval(input()), eval(input()), []
+# for x in range(len(A)):  mtx.append([])
+# for i in range(len(A)):
+# 	for j in range(len(A[i])):  mtx[i].append(A[i][j] * B[i][j])
+# print(mtx)
+
+
+# 9 - Escreva um programa para ler os elementos de uma matriz M de ordem 6x5. O elementos devem ser lidos primeiramente na primeira linha da matriz e assim por diante
+#mtx = []
+#for i in range(6):  mtx.append([])
+#for i in range(6):
+#    for j in range(5):  n = int(input());  mtx[i].append(n)
+#print(mtx)
+
+
+# 11 - MENOR ELEMENTO FORA DA DIAGONAL PRINCIPAL
+# mtx, dfr = eval(input()), []
+# for i in mtx:
+#    for j in i:
+#       if mtx.index(i) != i.index(j):  dfr.append(j)
+# print(min(dfr))
+
+
+# 12 - multiplicação de matriz com vetor
+#mtx, v, prdt, res = eval(input()), eval(input()), [[] for i in range(5)], []
+#for j in range(5):
+#    for i in range(6):  prdt[j].append(mtx[i][j] * v[i])
+#for x in prdt:  res.append(sum(x))
+#print(res)
+
+
+# 13 - MENOR ELEMENTO ABAIXO DA DIAGONAL PRINCIPAL
+# mtx, dfr = eval(input()), []
+# for i in mtx:
+#    for j in i:
+#       if mtx.index(i) > i.index(j):  dfr.append(j)
+# print(min(dfr))
+
+
+# 16(15) - elementos da diagonal inferior da matriz
+# o = int(input());  mtx, dfr = [[] for x in range(o)], []
+# for i in range(o):
+#     for j in  range(o):  n = int(input());  mtx[i].append(n)
+# for i in mtx:
+#    for j in i:
+#       if mtx.index(i) > i.index(j):  dfr.append(j)
+# for x in dfr:  print(x, end = ' ')
+
+
+# 17(16) - MAIOR ELEMENTO ACIMA DA DIAGONAL PRINCIPAL
+#mtx, dfr = eval(input()), []
+#for i in mtx:
+#   for j in i:
+#      if mtx.index(i) < i.index(j):  dfr.append(j)
+#print(max(dfr))
+
+
+# 18(17) - MAIOR ELEMENTO FORA DA DIAGONAL PRINCIPAL
+# mtx, dfr = eval(input()), []
+# for i in mtx:
+#    for j in i:
+#       if mtx.index(i) != i.index(j):  dfr.append(j)
+# print(max(dfr))
+
+
+# 19(18) - SOMA DOS ELEMENTOS FORA DA DIAGONAL PRINCIPAL
+# mtx, soma = eval(input()), 0
+# for i in mtx:
+#    for j in i:
+#       if mtx.index(i) != i.index(j):  soma += j
+# print(round(soma, 2))
