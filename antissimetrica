@@ -1,4 +1,4 @@
-def ant(M):  
+def ant(M):
 	def trp(M):  return [[M[i][j] for i in range(len(M))] for j in range(len(M[0]))]
 	def neg(M):  return [[-M[i][j] for j in range(len(M[0]))] for i in range(len(M))]
 	return trp(M) == neg(M)
